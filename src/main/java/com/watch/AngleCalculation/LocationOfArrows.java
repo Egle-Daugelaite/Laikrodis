@@ -10,31 +10,31 @@ public class LocationOfArrows {
 	
 
 	private Time time;
-	private double degreeOfMinArrow;
-	private double degreeOfHArrow;
+	private double degreesOfMinArrow;
+	private double degreesOfHArrow;
 
 	public LocationOfArrows(Time time) {
 		this.time = time;
 	}
 
-	public double getDegreeOfMinArrow() {
+	public double getDegreesOfMinArrow() {
 		
-		degreeOfMinArrow = time.getMin() * DEGREES_OF_ONE_MIN;
+		degreesOfMinArrow = time.getMin() * DEGREES_OF_ONE_MIN;
 
-		return degreeOfMinArrow;
+		return degreesOfMinArrow;
 
 	}
 
-	public double getDegreeOfHArrow() {
+	public double getDegreesOfHArrow() {
 		
 		int degreesOfFullHours;
 		double degreesOfNotFullHours;
 
 		degreesOfFullHours = time.getH() * DEGREES_OF_ONE_H;
 		degreesOfNotFullHours = DEGREES_OF_H_IN_ONE_MIN * time.getMin();
-		degreeOfHArrow = degreesOfFullHours + degreesOfNotFullHours;
+		degreesOfHArrow = degreesOfFullHours + degreesOfNotFullHours;
 
-		return degreeOfHArrow;
+		return degreesOfHArrow;
 
 	}
 
