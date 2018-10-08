@@ -1,15 +1,15 @@
 package com.watch.AngleCalculation;
 
-import com.watch.model.Time;
-
 public class AngleBetweenArrowsCalculation {
 
-	private Time time;
-
 	private double angleBetweenArrows;
+	double degreesOfMinArrow;
+	double degreesOfHArrow;
 
-	public AngleBetweenArrowsCalculation(Time time) {
-		this.time = time;
+	
+	public AngleBetweenArrowsCalculation(double degreesOfHArrow, double degreesOfMinArrow) {
+		this.degreesOfHArrow = degreesOfHArrow;
+		this.degreesOfMinArrow = degreesOfMinArrow;
 	}
 
 	public double getAngleBetweenArrows() {
@@ -21,16 +21,10 @@ public class AngleBetweenArrowsCalculation {
 
 	private void setTheSmallestAngle() {
 
-		LocationOfArrows MinArrow = new LocationOfArrows(time);
-		LocationOfArrows HArrow = new LocationOfArrows(time);
-
-		double degreeOfMinArrow = MinArrow.getDegreeOfMinArrow();
-		double degreeOfHArrow = HArrow.getDegreeOfHArrow();
-
-		if (degreeOfMinArrow >= degreeOfHArrow) {
-			angleBetweenArrows = degreeOfMinArrow - degreeOfHArrow;
+		if (degreesOfMinArrow >= degreesOfHArrow) {
+			angleBetweenArrows = degreesOfMinArrow - degreesOfHArrow;
 		} else {
-			angleBetweenArrows = degreeOfHArrow - degreeOfMinArrow;
+			angleBetweenArrows = degreesOfHArrow - degreesOfMinArrow;
 		}
 
 		if (angleBetweenArrows >= 180) {
